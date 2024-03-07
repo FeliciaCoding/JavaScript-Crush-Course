@@ -15,5 +15,3 @@ This README provides an overview of a JavaScript program focusing on operators a
 
 - **Baby Level Weather App (Conditionals)**
   - Finally, the program implements a simple weather app using conditionals. It prompts the user to input the weather condition and advises whether to grab an umbrella or wear sunglasses based on the input.
-
-Feel free to explore the code further and experiment with it to deepen your understanding of JavaScript basics. If you have any questions or need clarification, don't hesitate to reach out!
