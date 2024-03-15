@@ -71,11 +71,13 @@ function sumReturnFunction(a,b){
    return a+b;
 }
 
-// ----------------------------- Arrow function (new) --------------------------------- //
+// ----------------------------- Arrow function (new) ------------------ //
 // - Syntax : 
 // const <functionName> = (auguments) => {
 //          <Instruction>
 // }
+// --------------------------------------------------------------------- //
+
 const greetingArrowFunction = (name) => {
     console.log(`Hi ${name} (Arrow function)`);
 }
@@ -96,6 +98,12 @@ console.log(sumArrowFunction(7,8)); // 15
 
 
 // ----------------------------- Arrow --------------------------------- //
+// --> C++
+// array<Type, Taille> nom {v1,v2,v3; 0 par default, error when there are more element than size 
+// vector<Type> nom (Taille, Valleur); 0 par default
+// nom = [[a1, a2, a3], [b1, b2, b3], [c1,c2, c3]];
+// --------------------------------------------------------------------- //
+
 fruits = ["apple", "orange", "banana", "pear"]; 
 
 // Arrow methods : 
@@ -116,8 +124,5 @@ console.log(fruits.indexOf("apple"));
 console.log(fruits.length); // 5
 
 
-// --> C++
-// array<Type, Taille> nom {v1,v2,v3; 0 par default, error when there are more element than size 
-// vector<Type> nom (Taille, Valleur); 0 par default
 
-// nom = [[a1, a2, a3], [b1, b2, b3], [c1,c2, c3]];
+
