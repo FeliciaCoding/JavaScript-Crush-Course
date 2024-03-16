@@ -49,7 +49,7 @@ console.log(person2["shirt"]); // violet
 //          }
 //------------------------------------------------------------------------------------
 
-const person = {
+const person1 = {
     firstName: "John",
     lastName: "Doe",
     // Shorthand method definition
@@ -58,13 +58,13 @@ const person = {
     }
 };
 
-console.log(person.fullName()); // Output: John Doe
+console.log(person1.fullName()); // Output: John Doe
 
 // Introducer Function 
 // using object + template literals for accessing data
 // using methods Math.floor()
 const introducer = (name, shirt, assets, liabilites) => {
-    const person= {
+    const person2= {
         name : name,
         shirt : shirt,
         assets : assets,
@@ -77,7 +77,7 @@ const introducer = (name, shirt, assets, liabilites) => {
         }
     }
 
-    const intro =`Hi, my name is ${person.name} and the color of my shirt is ${person.shirt} and my net worth is $${person.assets-person.liabilities} USD`; 
+    const intro =`Hi, my name is ${person2.name} and the color of my shirt is ${person2.shirt} and my net worth is $${person2.assets-person2.liabilities} USD`; 
 
     return intro; 
 }
