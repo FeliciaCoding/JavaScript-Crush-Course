@@ -120,19 +120,22 @@ const max = (array) => {
 }
 console.log(max(numArray));
 
-// Function frequency 
-const frequency= (array, number) => {
-    let resultFrequency = 0; 
-    for (let i = 0; 0 < array.length; ++i){
-        if (array[i]=number){
-            ++resultFrequency;
-        }
-    }
-    return {resultFrequency};
-}
-console.log(frequency(numArray, "1"));
+// // Function numFrequency : frequency for specific number 
+// const numFrequency= (array, number) => {
+//     let resultFrequency = 0; 
+//     for (let i = 0; 0 < array.length; ++i){
+//         if (array[i]=number){
+//             ++resultFrequency;
+//         }
+//     }
+//     return {resultFrequency};
+// }
+// console.log(numFrequency(numArray, "1"));
 
-// const letterFrequency 
+// ---------------- Excercise : class + loop 
+// function letterFrequency 
+    // letterFrequency("haha") -> ('h':2, 'a':2)
+
 
 // Function : LetterCounter
 
@@ -193,4 +196,56 @@ const letterCounter4 = (phrase) => {
 console.log(letterCounter4(phrase)); // { result: 43 }
 
 
+/* My Attempt :: 
+const letterFrequency =(phrase) => {
 
+    for (const letter of phrase){ 
+    
+    // 1. put outside/inside of the loop ? 
+    // declare before the loop so it can be used outside of the loop 
+
+    // 2. `this.` v.s. `letter.` 
+    // this : refers to the current function scope
+    // letter.: refer to the letter object
+      const letters = {
+        letter, 
+        frequencyInit : "0", // 3. algorithm wrong : Didnt check if the letter already exist !! 
+        resultFrequency : function () {
+            if (this.resultFrequency>this.frequencyInit){
+                return this.resultFrequency = Number(his.resultFrequency)+1; //2
+            }else{
+                return this.resultFrequency = Number(this.frequencyInit)+1; //1
+            }
+        }
+      }
+    }
+
+    console.log(`${letters.letter} : ${letters.resultFrequency}`);
+
+}
+letterFrequency(phrase);
+// expect outcome -> "h" : 1, "l":3 ...
+ */
+
+
+const letterFrequency =(phrase) => {
+    const frequencies = {}; // declare arrow 
+    
+    for (const letter of phrase) {
+        // check if the letter exists already
+        if (frequencies[letter]){
+            // if yes, add 1
+            frequencies[letter]++;
+        }else { // if its new letter, set frequency as 1
+            frequencies[letter] = 1;
+        }
+
+    }
+
+    for (const letter in frequencies) {
+        console.log(`${letter} : ${frequencies[letter]}`);
+    }
+
+}
+
+letterFrequency(phrase);
