@@ -229,16 +229,20 @@ letterFrequency(phrase);
 
 
 const letterFrequency =(phrase) => {
-    const frequencies = {}; // declare arrow 
+    const frequencies = {}; // declare an empty object
     
+    // Loop through each letter in the phrase
     for (const letter of phrase) {
-        // check if the letter exists already
-        if (frequencies[letter]){
-            // if yes, add 1
+        // check if the letter exists already in the frequencies object 
+        if (frequencies[letter]){ 
+            // If it exists, increment its frequency
             frequencies[letter]++;
         }else { // if its new letter, set frequency as 1
             frequencies[letter] = 1;
         }
+
+        console.log(`${frequencies[letter]}`);
+
 
     }
 
@@ -247,5 +251,4 @@ const letterFrequency =(phrase) => {
     }
 
 }
-
 letterFrequency(phrase);
