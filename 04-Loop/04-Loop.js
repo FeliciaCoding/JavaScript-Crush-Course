@@ -41,7 +41,10 @@ for (const element of numArray){
     console.log(element);
 }
 
-// Function Sum : Sum up all numbers in array 
+//--------------------------------------------------------------
+//                      Function : sum
+//              Sum up all numbers in array 
+//--------------------------------------------------------------
 const sum = (array) =>{
     let sumResult = 0; 
     for (const element of array){
@@ -52,8 +55,10 @@ const sum = (array) =>{
 }
 
 console.log(sum(numArray)); 
-
-// Function double : Double each number
+//--------------------------------------------------------------
+//                      Function : double
+//          Double all values using normal function 
+//--------------------------------------------------------------
 function double(array){ // by value
     let result = []; 
 
@@ -69,6 +74,10 @@ function double(array){ // by value
 
 console.log("Double Array :", double(numArray)); // [ 2, 4, 6, 8, 10, 12 ]
 
+//--------------------------------------------------------------
+//                      Function : doubleArrayFunction
+//                  Double all values using array function 
+//--------------------------------------------------------------
 const doubleArrowFunction = (array) =>{
 
     let result = []; 
@@ -85,7 +94,11 @@ console.log("Double Array :", doubleArrowFunction(numArray));
 
 console.log("Original Array :", numArray); // Value doesnt change[ 1, 2, 3, 4, 5, 6 ]
 
-// Function square : square all the values in the array and create a new array
+//--------------------------------------------------------------
+//                      Function : square
+// Square all the values in the array and create a new array
+//--------------------------------------------------------------
+
 // Arrow function can only be reclared as const? 
 const square = (array) => {
 
@@ -103,7 +116,9 @@ const square = (array) => {
 
 console.log("Squared Array :", square(numArray));
 
-// Function max : 
+//--------------------------------------------------------------
+//                      Function : max
+//--------------------------------------------------------------
 
 const max = (array) => {
     // Do i have to specify the value or it will set value to 0 by default?
@@ -120,24 +135,26 @@ const max = (array) => {
 }
 console.log(max(numArray));
 
-// // Function numFrequency : frequency for specific number 
-// const numFrequency= (array, number) => {
-//     let resultFrequency = 0; 
-//     for (let i = 0; 0 < array.length; ++i){
-//         if (array[i]=number){
-//             ++resultFrequency;
-//         }
-//     }
-//     return {resultFrequency};
-// }
-// console.log(numFrequency(numArray, "1"));
+//--------------------------------------------------------------
+//                      Function : numFrequency
+//                  Frequency for specific number 
+//--------------------------------------------------------------
 
-// ---------------- Excercise : class + loop 
-// function letterFrequency 
-    // letterFrequency("haha") -> ('h':2, 'a':2)
+const numFrequency= (array, number) => {
+    let resultFrequency = 0; 
+    for (let i = 0; 0 < array.length; ++i){
+        if (array[i]=number){
+            ++resultFrequency;
+        }
+    }
+    return {resultFrequency};
+}
+console.log(numFrequency(numArray, "1"));
 
-
-// Function : LetterCounter
+//--------------------------------------------------------------
+//                      Function : letterCounter
+//                Count how many letters in the phrase
+//--------------------------------------------------------------
 
 const letterCounter1 = (phrase) => {
     let counter = 0; 
@@ -174,7 +191,11 @@ const letterCounter2 = (phrase) => {
 console.log(`There are ${letterCounter2(phrase)} letters including spaces.`); 
 // There are 43 letters including spaces.
 
-// return { } 
+//--------------------------------------------------------------
+//                      return { } 
+//             Repeat the title when print out
+//--------------------------------------------------------------
+
 const letterCounter3 = (phrase) => {
     let numletter; 
     for (const index in phrase){
@@ -195,7 +216,9 @@ const letterCounter4 = (phrase) => {
 
 console.log(letterCounter4(phrase)); // { result: 43 }
 
-
+//--------------------------------------------------------------
+//                      Function : letterFrequency
+//--------------------------------------------------------------
 /* My Attempt :: 
 const letterFrequency =(phrase) => {
 
@@ -234,9 +257,9 @@ const letterFrequency =(phrase) => {
     // Loop through each letter in the phrase
     for (const letter of phrase) {
         // check if the letter exists already in the frequencies object 
-        if (frequencies[letter]){ 
+        if (frequencies[letter]){ // if (letter in frequencies )
             // If it exists, increment its frequency
-            frequencies[letter]++;
+            frequencies[letter]++; // frequencies[letter] = frequencies[letter] + 1
         }else { // if its new letter, set frequency as 1
             frequencies[letter] = 1;
         }
