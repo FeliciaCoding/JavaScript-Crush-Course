@@ -142,14 +142,18 @@ console.log(max(numArray));
 
 const numFrequency= (array, number) => {
     let resultFrequency = 0; 
-    for (let i = 0; 0 < array.length; ++i){
-        if (array[i]=number){
+    for (let i = 0; i < array.length; ++i){
+        // if (array[i]=number){ // must use comparison "==" rather than assignation "="
+        if (array[i]===number){
             ++resultFrequency;
         }
     }
-    return {resultFrequency};
+    // return {resultFrequency};    
+    return resultFrequency; // / Return the frequency directly (no need for an object)
 }
-console.log(numFrequency(numArray, "1"));
+
+
+console.log(numFrequency(numArray, 1)); // 1 not string"1"
 
 //--------------------------------------------------------------
 //                      Function : letterCounter
@@ -252,7 +256,8 @@ letterFrequency(phrase);
 
 
 const letterFrequency =(phrase) => {
-    const frequencies = {}; // declare an empty object
+    // declare an empty object
+    const frequencies = {}; 
     
     // Loop through each letter in the phrase
     for (const letter of phrase) {
@@ -275,3 +280,42 @@ const letterFrequency =(phrase) => {
 
 }
 letterFrequency(phrase);
+
+//--------------------------------------------------------------
+//                      Function : wordFrequency
+// call function: wordFrequency ("hello world hello")
+// output : {"hello" : 2 , "world" :1 }
+//--------------------------------------------------------------
+
+
+const wordFrequency = (phrase) => {
+    
+    const frequencies = {}; // create an empty object to store data
+    // let word; // undefind: initializing word without assigning it an initial value, which means it will start as undefined
+    let word = "";
+
+    for (const letter of phrase){
+        
+        // if (letter != " " || letter !="."){ // will always be true
+        if (letter != " " && letter !="."){    
+            word += letter; 
+        }else {
+            if (frequencies[word]){
+                frequencies[word]++;
+                word = "";
+           } else {
+                frequencies[word] = 1; 
+                word = "";
+                }       
+        }
+        
+    }
+
+    for (const word in frequencies){
+        console.log(`${word} : ${frequencies[word]}`);
+    }
+
+}
+let phrase1 = "I am coding in javascript and I like to code in javascript ";
+wordFrequency(phrase1);
+
