@@ -156,6 +156,31 @@ const numFrequency= (array, number) => {
 console.log(numFrequency(numArray, 1)); // 1 not string"1"
 
 //--------------------------------------------------------------
+//                      Function : numAllFrequency
+//                      Frequency for all numbers 
+//--------------------------------------------------------------
+
+const numAllFrequency = (array) =>{
+    const frequencies = {};
+    let numer = "";
+
+    for (const number of array){
+        if (frequencies[number]){ //non-zero
+            frequencies[number]++;
+        } else {
+            frequencies[number] = 1;
+        }
+    }
+
+    for (const number in frequencies) {
+        console.log(`${number} : ${frequencies[number]}`);
+    }
+
+}
+const numArray2 = [1,2,3,4,5,6,5,3,3,3,2,2,6,7];
+numAllFrequency(numArray2);
+
+//--------------------------------------------------------------
 //                      Function : letterCounter
 //                Count how many letters in the phrase
 //--------------------------------------------------------------
