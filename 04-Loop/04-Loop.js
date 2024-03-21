@@ -312,35 +312,67 @@ letterFrequency(phrase);
 // output : {"hello" : 2 , "world" :1 }
 //--------------------------------------------------------------
 
+// method 1 : use space to split words
+function wordFrequency1(phrase) {
 
-const wordFrequency = (phrase) => {
-    
     const frequencies = {}; // create an empty object to store data
+
     // let word; // undefind: initializing word without assigning it an initial value, which means it will start as undefined
     let word = "";
 
-    for (const letter of phrase){
-        
+    for (const letter of phrase) {
+
         // if (letter != " " || letter !="."){ // will always be true
-        if (letter != " " && letter !="."){    
-            word += letter; 
-        }else {
-            if (frequencies[word]){
+        if (letter != " " && letter != ".") {
+            word += letter;
+        } else {
+            if (frequencies[word]) {
                 frequencies[word]++;
                 word = "";
-           } else {
-                frequencies[word] = 1; 
+            } else {
+                frequencies[word] = 1;
                 word = "";
-                }       
+            }
         }
-        
+
     }
 
-    for (const word in frequencies){
+    for (const word in frequencies) {
         console.log(`${word} : ${frequencies[word]}`);
     }
 
 }
-let phrase1 = "I am coding in javascript and I like to code in javascript ";
-wordFrequency(phrase1);
+let phraseWithSpaceEnd= "I am coding in javascript and I like to code in javascript ";
+// this code wont works if there is no " " space in the end of the sentence !! 
+wordFrequency1(phraseWithSpaceEnd);
+
+// Method 2 : Use split()
+const wordFrequency2 = (phrase) => {
+    frequencies = {}; // object to store the pairs [word : frequency]
+
+    // words = []; // arrow to store words 
+    words = phrase.split(" "); // words are seperated by space 
+    console.log(words);
+    // ['I', 'am', 'coding', 'in', 'javascript', 'and', 'I', 'like', 'to', 'code', 'in', 'javascript']
+
+    // run the words' array 
+    for (const word of words){
+        if (frequencies[word]){
+            frequencies[word]++;
+        } else {
+            frequencies[word] = 1; 
+        }
+
+    }
+    // run the object 
+    for (const word in frequencies){
+        console.log(`${word} : ${frequencies[word]}`); 
+    }
+} 
+
+let phrase1= "I am coding in javascript and I like to code in javascript";
+wordFrequency2(phrase1);
+
+
+
 
