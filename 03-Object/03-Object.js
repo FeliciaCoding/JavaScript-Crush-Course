@@ -71,7 +71,7 @@ const introducer = (name, shirt, assets, liabilites) => {
         liabilities : liabilites,
         // -------- > function member: function in the object
         // netWorth : person.assets - person.liabilities -> undefine 
-        // using `this` to point to the Object 
+        // using `this` to point to the Object
         netWorth : function() {
             return this.assets - this.liabilities; 
         }
