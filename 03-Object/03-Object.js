@@ -77,7 +77,7 @@ const introducer = (name, shirt, assets, liabilites) => {
         }
     }
 
-    const intro =`Hi, my name is ${person2.name} and the color of my shirt is ${person2.shirt} and my net worth is $${person2.assets-person2.liabilities} USD`; 
+    const intro =`Hi, my name is ${person2.name} and the color of my shirt is ${person2.shirt} and my net worth is $${person2.netWorth} USD`; 
 
     return intro; 
 }
