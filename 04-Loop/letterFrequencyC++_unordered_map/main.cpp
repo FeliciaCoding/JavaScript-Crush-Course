@@ -25,7 +25,8 @@ int main() {
     // Loop through each character in the string
     for (char letter : phrase) {
         // Increment the frequency of the character
-        frequencies[letter]++;
+        // frequencies[letter]++;
+        ++frequencies[letter];
     }
 
     // Print the frequencies

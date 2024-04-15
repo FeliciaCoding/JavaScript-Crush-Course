@@ -375,7 +375,7 @@ wordFrequency2(phrase1);
 
 // Method 3 : using functions inside the function 
 
-const wordFrequencyWithFunctions = (phrase) {
+const wordFrequencyWithFunctions = (phrase) => {
     const words = phrase.split(' ');
     return letterFrequency(words);
 }
