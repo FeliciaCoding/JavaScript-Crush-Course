@@ -132,4 +132,4 @@ const resultMultiply = nums1.reduce(multiply);
 // const resultMultiply = nums1reduce((a,b) => a*b)
 console.log(resultMultiply); // 24
 
-// 3:36:07
+// 3:38:08
