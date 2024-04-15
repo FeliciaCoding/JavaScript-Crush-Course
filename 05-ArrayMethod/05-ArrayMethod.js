@@ -94,11 +94,10 @@ console.log(names);
 //                        .reduce()
 //        loops and gives you back the accumulator
 //     Higher over function: take a function ad an argument
-//      Syntax = array.reduce((ele1,ele2) => action )
+//      Syntax = array.reduce(function)
 //--------------------------------------------------------------
-// 3.27.29
 
-const nums1 = [1,2,3]; 
+const nums1 = [1,2,3,4]; 
 const result4 = nums1.reduce(function(prev,curr) {
     return prev + curr;
 })
@@ -109,5 +108,28 @@ console.log(result4);
 console.log(result5);
 
 
+function sum(a,b) {
+    return a+b
+}
+
+const resultSum  = nums1.reduce(sum);
+// const resultSum = nums1reduce((a,b) => a+b)
+console.log(resultSum );
 
 
+//--------------------------------------------------------------
+//                  Excercise : multiply
+//        Using the .reduce to create a funciton 
+//        that multiplies the numbers of a giving array 
+//        with one another
+//--------------------------------------------------------------
+
+function multiply (a, b) {
+    return a*b;
+}
+
+const resultMultiply = nums1.reduce(multiply); 
+// const resultMultiply = nums1reduce((a,b) => a*b)
+console.log(resultMultiply); // 24
+
+// 3:36:07
