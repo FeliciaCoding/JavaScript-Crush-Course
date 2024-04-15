@@ -247,6 +247,7 @@ console.log(letterCounter4(phrase)); // { result: 43 }
 
 //--------------------------------------------------------------
 //                      Function : letterFrequency
+//To count all the letters and print their corresponding frequencies 
 //--------------------------------------------------------------
 /* My Attempt :: 
 const letterFrequency =(phrase) => {
@@ -285,7 +286,7 @@ const letterFrequency =(phrase) => {
     const frequencies = {}; 
     
     // Loop through each letter in the phrase
-    for (const letter of phrase) {
+    for (const letter of phrase) { 
         // check if the letter exists already in the frequencies object 
         if (frequencies[letter]){ // if (letter in frequencies )
             // If it exists, increment its frequency
@@ -357,21 +358,36 @@ const wordFrequency2 = (phrase) => {
 
     // run the words' array 
     for (const word of words){
-        if (frequencies[word]){
+        if (word in frequencies){ // if (frequencies[word]){ 
             frequencies[word]++;
         } else {
             frequencies[word] = 1; 
         }
-
     }
     // run the object 
     for (const word in frequencies){
         console.log(`${word} : ${frequencies[word]}`); 
     }
-} 
+}  
 
 let phrase1= "I am coding in javascript and I like to code in javascript";
 wordFrequency2(phrase1);
+
+// Method 3 : using functions inside the function 
+
+const wordFrequencyWithFunctions = (phrase) {
+    const words = phrase.split(' ');
+    return letterFrequency(words);
+}
+
+// User Input
+// const userInput = prompt('Write your sentence')
+// console.log(wordFrequencyWithFunctions(userInput));
+console.log(wordFrequencyWithFunctions(phrase1)); 
+
+
+
+
 
 
 
