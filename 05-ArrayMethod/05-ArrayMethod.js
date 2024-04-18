@@ -79,6 +79,8 @@ console.log(result3);
 // { name: 'Vanessa', netWorth: 200000000000000 },
 // { name: 'Leonardo', netWorth: 100000000000 }
 
+
+
 //--------------------------------------------------------------
 //                        .join(' deliminator ')
 //       put into a string seperated by the deliminator 
@@ -108,11 +110,12 @@ console.log(result4);
 console.log(result5);
 
 
-function sum(a,b) {
+function sum1(a,b) {
     return a+b
 }
 
-const resultSum  = nums1.reduce(sum);
+// const resultSum = num1.reduce((a,b) => a+b, 0)
+const resultSum  = nums1.reduce(sum1);
 // const resultSum = nums1reduce((a,b) => a+b)
 console.log(resultSum );
 
@@ -131,5 +134,58 @@ function multiply (a, b) {
 const resultMultiply = nums1.reduce(multiply); 
 // const resultMultiply = nums1reduce((a,b) => a*b)
 console.log(resultMultiply); // 24
+
+//--------------------------------------------------------------
+//                 Using .ruduce() in a class 
+//--------------------------------------------------------------
+
+// Excercise 1
+
+//const sum = (a,b) => {a+b}; 
+//let sumNetworth = actors.reduce(sum(actors.netWorth,0)); 
+//console.log(sumNetworth); 
+console.log(actors.reduce((prev,curr) => prev + curr.netWorth, 0))
+
+
+// Excercise 2
+
+const students = [
+    {name : "Amy", age: 8, grade: 89},
+    {name : "Branda", age : 9, grade : 90},
+    {name : "Cindy", age : 10, grade : 91}
+]
+
+function averageGradeFunction (array){
+    let sumGrade = 0;
+    let n = array.length;
+    // for ( const e of array){
+    //     sum+=e;
+    // }
+
+    for (const student of array){
+        sumGrade += student.grade;
+
+    }
+    return sumGrade/n;
+}
+
+let averageGrade = averageGradeFunction(students); 
+
+function averageGradeFunctionReduce(array){
+    // By providing 0 as the initial value, 
+    // it ensures that even if the array is empty, 
+    // the initial value of sum will be 0, 
+    // and the reduce() function will still work correctly.
+    let sumGrade = array.reduce((sum,element) => sum + element.grade, 0);
+    let n = array.length;
+
+    //return sumGrade/(array.length);
+    return sumGrade/n;
+}
+
+let averageGradeUsingReduce = averageGradeFunctionReduce(students); 
+
+console.log(averageGrade);
+console.log(averageGradeUsingReduce);
 
 // 3:38:08
