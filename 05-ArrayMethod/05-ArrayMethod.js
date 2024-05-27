@@ -189,3 +189,6 @@ console.log(averageGrade);
 console.log(averageGradeUsingReduce);
 
 // 3:38:08
+
+// DOM manipulation
+
