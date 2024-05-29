@@ -16,11 +16,11 @@ let name3 = "Felicia"
 
 let color1= "red"; 
 let color2= "green"; 
-let color3= "yelloe"; 
+let color3= "yellow"; 
 
-console.log(`Hello ${name1}, your ${color1} skirt is beautiful`); 
-console.log(`Hello ${name1}, your ${color2} skirt is beautiful`); 
-console.log(`Hello ${name1}, your ${color3} skirt is beautiful`); 
+console.log(`Hello ${name1}, your ${color1} skirt is beautiful.`); 
+console.log(`Hello ${name2}, your ${color2} skirt is beautiful.`); 
+console.log(`Hello ${name3}, your ${color3} skirt is beautiful.`); 
 
 
 //--------------------------------------------------------------
