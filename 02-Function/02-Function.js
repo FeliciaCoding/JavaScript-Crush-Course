@@ -1,24 +1,52 @@
-// ----------------------------- Function --------------------------------- //
-// ------------> 1.  Function with 0 arguments
+//--------------------------------------------------------------
+//             Template literals `        `  
+//   To interpolate cariables and expressions into strings
+//      Interpolation: an efficient way of concatenation. 
+//
+//           String Interpolation ${ variables}
+//         Referencing a variable within a string 
+//       
+//                Syntax :  `   ${ variables}    `  
+//            
+//--------------------------------------------------------------
+
+let name1 = "Vanessa"; 
+let name2 = "Sandia"; 
+let name3 = "Felicia"
+
+let color1= "red"; 
+let color2= "green"; 
+let color3= "yelloe"; 
+
+console.log(`Hello ${name1}, your ${color1} skirt is beautiful`); 
+console.log(`Hello ${name1}, your ${color2} skirt is beautiful`); 
+console.log(`Hello ${name1}, your ${color3} skirt is beautiful`); 
+
+
+//--------------------------------------------------------------
+//                          Function
+//        Syntax : function functionName( auguments ){  
+//                 instructions  
+//                 }
+//--------------------------------------------------------------
+
+// 1. Function with 0 arguments
 function sayMyName(){
     console.log("Felicia");
 }
 sayMyName();
 
-// ------------> 2. Function with 1 argument
-//      Template literals< `   ` >: To interpolate cariables and xpressions into strings
-//      Interpolation: an efficient way of concatenation.  
-//        - String Interpolation < ${Variables} > :  Referencing a variable within a string 
+// 2. Function with 1 argument
 function greeting (name){
     greet = `Hi ${name}, nice to meet you`; 
     console.log(greet);
 }
-// -> while in c++: 
-// cout << "Hi" << name << ", nice to meet you" << endl;
+//    C++ remark : 
+//    cout << "Hi" << name << ", nice to meet you" << endl;
 
 greeting("Vanessa");
 
-// ------------> 3. Function with 2 multiple arguments
+// 3. Function with 2 multiple arguments
 function multipale (a, b){
     product = a * b; 
     calcu = `${a} x ${b} = ${product}`; 

@@ -23,9 +23,9 @@ Ceil - Rounds up
 Random - gives you number between 0 and 1
 */
 
-//var numRandom = 
-Math.random(); 
-// console.log("Random Number = ". numRandom); 
+// var numRandom = 
+// Math.random(); 
+// console.log("Random Number = ", numRandom); 
 // numRandom = Math.ceil(numRandom);
 // console.log("Number rounds up = ", numRandom); 
 

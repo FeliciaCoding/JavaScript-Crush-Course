@@ -23,6 +23,7 @@ console.log(squares[1].value)
 console.log(squares[2].value)
 */
 
+// add a array, assisgn values 
 const timeClicked = {"red" : 0, "yellow" : 0, "green" : 0};
 
 // forEach : array method that executes a provided function once for each array element.
