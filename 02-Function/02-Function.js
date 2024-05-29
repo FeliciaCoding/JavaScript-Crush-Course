@@ -1,4 +1,4 @@
-//--------------------------------------------------------------
+//--------------------------------------------------------------//
 //             Template literals `        `  
 //   To interpolate cariables and expressions into strings
 //      Interpolation: an efficient way of concatenation. 
@@ -8,7 +8,7 @@
 //       
 //                Syntax :  `   ${ variables}    `  
 //            
-//--------------------------------------------------------------
+//--------------------------------------------------------------//
 
 // Example 1
 let name1 = "Vanessa"; 
@@ -39,12 +39,12 @@ sumOutput = `sum = ${a} + ${b} = ${sumResult}`;
 console.log(sumOutput); // sum = 1 + 2 = 3
 
 
-//--------------------------------------------------------------
+//--------------------------------------------------------------//
 //                          Function
 //        Syntax : function functionName( auguments ){  
 //                 instructions  
 //                 }
-//--------------------------------------------------------------
+//--------------------------------------------------------------//
 
 // 1. Function with 0 arguments
 function sayMyName(){
@@ -79,9 +79,9 @@ function exponant (base,power){
 
 exponant(3,5);
 
-//--------------------------------------------------------------
+//--------------------------------------------------------------//
 //                         Reuturn Method
-//--------------------------------------------------------------
+//--------------------------------------------------------------//
 
 // Example 1 : 
 function sumReturnFunction(a,b){
@@ -104,10 +104,10 @@ console.log(`Tip Amount : ${tipAmoun}`);
 console.log("Total Amount : ", total);
 console.log("Total Amount : ", calculateTip(30, 2));
 
-//--------------------------------------------------------------
+//--------------------------------------------------------------//
 //                      ES6 - Arrow function 
 //                  Write shorter function syntax 
-//--------------------------------------------------------------
+//--------------------------------------------------------------//
 
 // Regular function (old) 
 function greetingFunction(name){
@@ -118,31 +118,32 @@ function sumReturnFunction(a,b){
    return a+b;
 }
 
-// ----------------------------- Arrow function (new) ------------------ //
+//--------------------------------------------------------------//
+//                  Arrow function (new) 
 // - Syntax : 
 // const functionName = (auguments) => {
 //          Instruction
 // }
-// --------------------------------------------------------------------- //
+//--------------------------------------------------------------//
 
 const greetingArrowFunction = (name) => {
     console.log(`Hi ${name} (Arrow function)`);
 }
 
-//--------------------------------------------------------------------- //
-//                Arrow function with explicit return
-// --------------------------------------------------------------------- //
+//--------------------------------------------------------------//
+//             Arrow function with explicit return
+//--------------------------------------------------------------//
 
 
 const sumReturnArrowFunction = (a,b) => { // Multiple lines
     return a+b;
 }
 
-//--------------------------------------------------------------------- //
+//--------------------------------------------------------------//
 //                Arrow function with implicit return
 //    Returning implicitly if it doesnt use the return method 
 //                  IMPORTANT : Remove curly braces
-// --------------------------------------------------------------------- //
+//--------------------------------------------------------------//
 
 
 const sumArrowFunction = (a,b) => a+b; // One line
@@ -151,12 +152,15 @@ console.log(sumReturnArrowFunction(5,6)); // 11
 console.log(sumArrowFunction(7,8)); // 15
 
 
-// ----------------------------- Arrow --------------------------------- //
+//--------------------------------------------------------------//
+//                           Arrow
 // --> C++
 // array<Type, Taille> nom {v1,v2,v3; 0 par default, error when there are more element than size 
 // vector<Type> nom (Taille, Valleur); 0 par default
+//
+// Syntax: 
 // nom = [[a1, a2, a3], [b1, b2, b3], [c1,c2, c3]];
-// --------------------------------------------------------------------- //
+//--------------------------------------------------------------//
 
 fruits = ["apple", "orange", "banana", "pear"]; 
 
