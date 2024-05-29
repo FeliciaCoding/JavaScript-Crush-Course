@@ -10,6 +10,7 @@
 //            
 //--------------------------------------------------------------
 
+// Example 1
 let name1 = "Vanessa"; 
 let name2 = "Sandia"; 
 let name3 = "Felicia"
@@ -21,6 +22,21 @@ let color3= "yellow";
 console.log(`Hello ${name1}, your ${color1} skirt is beautiful.`); 
 console.log(`Hello ${name2}, your ${color2} skirt is beautiful.`); 
 console.log(`Hello ${name3}, your ${color3} skirt is beautiful.`); 
+
+// Example 2
+function sumReturnFunction(a,b){
+    return a+b;
+}
+sumResult = sumReturnFunction(1,2);
+
+//sumOutput = `sum ${a} + ${b} = ${sumResult}`;
+//console.log(sumOutput);
+// Error : a is not defined 
+
+let a = 1; 
+let b = 2; 
+sumOutput = `sum = ${a} + ${b} = ${sumResult}`; 
+console.log(sumOutput); // sum = 1 + 2 = 3
 
 
 //--------------------------------------------------------------
@@ -63,32 +79,35 @@ function exponant (base,power){
 
 exponant(3,5);
 
-// ------------> Reuturn Method
+//--------------------------------------------------------------
+//                         Reuturn Method
+//--------------------------------------------------------------
+
+// Example 1 : 
 function sumReturnFunction(a,b){
     return a+b;
 }
-// sumResult = sumReturn(1,2);
-// //sumOutput = `sum ${a} + ${b} = ${sumResult}`;
-// //console.log(sumOutput);
-// // Error : a is not defined 
-// console.log(sumResult);
 
+sumResult = sumReturnFunction(1,2);
+console.log(sumResult);
 
-function calculateFoodTotal(foodPrice, tipPercentage){
+// Example 2 : 
+function calculateTip(foodPrice, tipPercentage){
     tipPercentage = tipPercentage / 100; 
     tipAmount = foodPrice * tipPercentage; 
     total = sumReturnFunction(foodPrice, tipAmount);
     return total;
 }
 
-//calculateFoodTotal(30, 2);
-//console.log("Tip Amount : ", tipAmount);
-//console.log("Total Amount : ", total);
+tipAmount = calculateTip(30, 2);
+console.log(`Tip Amount : ${tipAmoun}`);
+console.log("Total Amount : ", total);
+console.log("Total Amount : ", calculateTip(30, 2));
 
-console.log("Total Amount : ", calculateFoodTotal(30, 2));
-
-// ------------> ES6 - Arrow function 
-// write shorter function syntax 
+//--------------------------------------------------------------
+//                      ES6 - Arrow function 
+//                  Write shorter function syntax 
+//--------------------------------------------------------------
 
 // Regular function (old) 
 function greetingFunction(name){
@@ -101,8 +120,8 @@ function sumReturnFunction(a,b){
 
 // ----------------------------- Arrow function (new) ------------------ //
 // - Syntax : 
-// const <functionName> = (auguments) => {
-//          <Instruction>
+// const functionName = (auguments) => {
+//          Instruction
 // }
 // --------------------------------------------------------------------- //
 
@@ -110,15 +129,22 @@ const greetingArrowFunction = (name) => {
     console.log(`Hi ${name} (Arrow function)`);
 }
 
-// - Benifit : Returning implicitly if it doesnt use the return method 
-// Arrow function with explicit return
+//--------------------------------------------------------------------- //
+//                Arrow function with explicit return
+// --------------------------------------------------------------------- //
+
 
 const sumReturnArrowFunction = (a,b) => { // Multiple lines
     return a+b;
 }
 
-// Arrow function with implicit return 
-// IMPORTANT : Remove curly braces
+//--------------------------------------------------------------------- //
+//                Arrow function with implicit return
+//    Returning implicitly if it doesnt use the return method 
+//                  IMPORTANT : Remove curly braces
+// --------------------------------------------------------------------- //
+
+
 const sumArrowFunction = (a,b) => a+b; // One line
 
 console.log(sumReturnArrowFunction(5,6)); // 11
