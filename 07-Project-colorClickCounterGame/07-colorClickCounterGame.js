@@ -3,7 +3,7 @@ let redDiv = document.getElementById("red");
 let yellowDiv = document.getElementById("yellow"); 
 let greenDiv = document.getElementById("green"); 
 
-let message = "I clicked the bottom : ";
+let message = "I clicked the button : ";
 redDiv.onclick = () => console.log(`${message}Red`);
 yellowDiv.onclick = () => console.log(`${message}Yellow`);
 greenDiv.onclick = () => console.log(`${message}Green`);
