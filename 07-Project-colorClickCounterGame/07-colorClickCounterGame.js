@@ -15,7 +15,7 @@ greenDiv.onclick = () => console.log(`${message}Green`);
 
 // document.querySelectorAll : to get a NodeList of elements with a specific class or tag.
 const squares = document.querySelectorAll(".colorSquare"); // .className
-// console.log(squares);
+console.log(squares);
 
 /*
 console.log(squares[0].value)
@@ -23,23 +23,25 @@ console.log(squares[1].value)
 console.log(squares[2].value)
 */
 
-// add a array, assisgn values 
+// Object : Assisgn values in the array 
 const timeClicked = {"red" : 0, "yellow" : 0, "green" : 0};
 
 // forEach : array method that executes a provided function once for each array element.
 squares.forEach(square => { // iterates over each element in the squares collection.
-    square.onclick = () => {
+    square.onclick = () => { // value="red" is clicked.
 
         // const color = square.getAttribute('value');
         const color = square.value;
+
+        numClick = timeClicked[color]; 
    
-        timeClicked[color] += 1;
+        numClick += 1; 
         // console.log(timeClicked); //Object { red: 2, yellow: 2, green: 2 }
 
-        square.innerText = timeClicked[color];
+        square.innerText = numClick; // sets the button’s inner text to the updated click count
         
         console.log(
-            `${color} clicked: ${timeClicked[color]}`);
+            `${color} clicked: ${numClick}`);
     }
 })
 
