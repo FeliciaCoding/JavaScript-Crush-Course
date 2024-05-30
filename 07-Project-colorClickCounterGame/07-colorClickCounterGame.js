@@ -62,9 +62,8 @@ squares.forEach(square => { // iterates over each element in the squares collect
 })
 
 let clearGameDiv = document.getElementById("clearGame");
-clearGameDiv.onclick = () => clearScore();
 
-function clearScore() {
+function clearScores() {
     
     squares.forEach(square => {
 
@@ -72,16 +71,20 @@ function clearScore() {
 
         timeClicked[color] = 0;
 
-        square.innerText = timeClicked[color]; 
+        // square.innerText = timeClicked[color]; 
+        square.innerText = ""; 
+
 
         message = "Clear Game";
         console.log(message);
 
     })
-    
 
 }
 
+
+
+clearGameDiv.onclick = () => clearScores();
 
 
 
