@@ -1,14 +1,17 @@
-// ----------------- Object ---------------------------------------------------------
-// Definition: A type of variable, similar to Arrays but they have key-value pairs. 
-// Syntax: 
+//--------------------------------------------------------------//
+//                           Object 
+// --> Definition: 
+// A type of variable, similar to Arrays but they have key-value pairs. 
+//
+// --> Syntax: 
 //                  const objectName = { }
-// ----------------------------------------------------------------------------------
+//--------------------------------------------------------------//
 
 const person = { 
     name : "Leonardo", 
     shirt : "white"};
 
-// ------------------- Access to objects---------------------------------------------   
+// ------------------- Access to objects------------------------//   
 // 1. dot notation .
 //                     object.nemberName
 console.log (person.name); // Leonardo

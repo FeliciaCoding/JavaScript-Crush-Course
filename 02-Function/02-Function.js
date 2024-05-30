@@ -173,7 +173,7 @@ console.log(fruits); // [ 'apple', 'orange', 'banana', 'pear', 'pineapple' ]
 console.log(fruits.slice(1,3)); // [ 'orange', 'banana' ]
 console.log(fruits.slice()); // take all
 
-// 3. .ndexOf()
+// 3. .indexOf()
 console.log(fruits.indexOf("Apple")); // -1
 console.log(fruits.indexOf("apple"));
 
