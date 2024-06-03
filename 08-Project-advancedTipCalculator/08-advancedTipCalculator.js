@@ -19,63 +19,69 @@ These are all the DIV ID's you're gonna need access to 👇
 
 // Get global access to all inputs / divs here (you'll need them later 😘)
 // bill input, tip input, number of people div, and per person total div
-const billTotalInputDiv = document.getElementsById("billTotalInput");
+const billTotalInputDiv = document.getElementById("billTotalInput");
 const tipInputDiv = document.getElementById("tipInput");
 const numberOfPeopleDiv = document.getElementById("numberOfPeople");
 const perPersonTotalDiv = document.getElementById("perPersonTotal");
 
 // Get number of people from number of people div
-numPeople = Number(numberOfPeopleDiv.innerText);  
-
+let numPeople = Number(numberOfPeopleDiv.innerText);  
+// get bill from user input & convert it into a number
+let totalBill = Number(billTotalInputDiv.value);
 
 
 // ** Calculate the total bill per person **
 const calculateBill = () => {
-    // get bill from user input & convert it into a number
-    totalBill = Number(billTotalInputDiv.innerText);
-
-  
+    
     // get the tip from user & convert it into a percentage (divide by 100)
-    tipPercentage = Number(tipInputDiv.innerText) / 100; 
+    const tipPercentage = Number(tipInputDiv.value) / 100; 
   
     // get the total tip amount
-    totalTip = totalBill * tipPercentage; 
+    const totalTip = totalBill * tipPercentage; 
   
     // calculate the total (tip amount + bill)
-    totalAmount = totalBill + totalTip; 
+    const totalAmount = totalBill + totalTip; 
   
     // calculate the per person total (total divided by number of people)
-    totalPerPerson = totalAmount / numPeople;
+    const totalPerPerson = totalAmount / numPeople;
   
     // update the perPersonTotal on DOM & show it to user
-    perPersonTotalDiv.innerText = totalPerPerson; 
+    perPersonTotalDiv.innerText = `$${totalPerPerson.toFixed(2)}`; 
+    //perPersonTotalDiv.innerText = `$${perPersonTotal.toFixed(2)}`
+
   }
   
   // ** Splits the bill between more people **
   const increasePeople = () => {
     // increment the amount of people
-  
+    // CANNOT take DIV to calculate -> numberOfPeopleDiv += 1; 
+    numPeople += 1; 
+
   
     // update the DOM with the new number of people
-  
+    // LeftValue -> numberOfPeople= Number(numberOfPeopleDiv.innerText); 
+    numberOfPeopleDiv.innerText = numPeople; 
   
     // calculate the bill based on the new number of people
-  
+    calculateBill();
+
+
   }
   
   // ** Splits the bill between fewer people **
   const decreasePeople = () => {
-    // guard clause
+    // guard clause : can't decrease the number of people to 0 or negative!
     // if amount is 1 or less simply return
-    // (a.k.a you can't decrease the number of people to 0 or negative!)
-  
-    
+    // The `return` statement itself does not return any specific value; it simply exits the function.
+    if (numPeople <= 1 ) {
+      return ; 
+    }
     // decrement the amount of people
-  
+    numPeople -= 1; 
   
     // update the DOM with the new number of people
-  
+    numberOfPeopleDiv.innerText = numPeople; 
   
     // calculate the bill based on the new number of people
-  
+    calculateBill();
   }
