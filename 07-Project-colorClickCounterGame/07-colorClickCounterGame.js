@@ -1,7 +1,7 @@
 
-let redDiv = document.getElementById("red"); 
-let yellowDiv = document.getElementById("yellow"); 
-let greenDiv = document.getElementById("green"); 
+const redDiv = document.getElementById("red"); 
+const yellowDiv = document.getElementById("yellow"); 
+const greenDiv = document.getElementById("green"); 
 
 
 let message = "I clicked the button : ";
@@ -46,6 +46,7 @@ squares.forEach(square => { // iterates over each element in the squares collect
         // const color = square.getAttribute('value');
         const color = square.value;
 
+        // Retrieve the current click count for this color
         numClick = timeClicked[color]; 
    
         numClick += 1; 
@@ -61,7 +62,7 @@ squares.forEach(square => { // iterates over each element in the squares collect
     }
 })
 
-let clearGameDiv = document.getElementById("clearGame");
+const clearGameDiv = document.getElementById("clearGame");
 
 function clearScores() {
     
