@@ -1,7 +1,8 @@
 //--------------------------------------------------------------//
 //                           Arrow
 // C++ :
-// array<Type, Taille> nom {v1,v2,v3; 0 par default, error when there are more element than size 
+// array<Type, Taille> nom {v1,v2,v3; 
+//          0 par default, error when more elements than its size 
 // vector<Type> nom (Taille, Valleur); 0 par default
 //
 // Syntax: 
@@ -26,3 +27,53 @@ console.log(fruits.indexOf("apple"));
 
 // 4. .length
 console.log(fruits.length); // 5
+
+
+
+//--------------------------------------------------------------//
+//                      Math.random()
+// returns a floating-point, pseudo-random number that <= 0 && < 1
+//--------------------------------------------------------------//
+
+// Example from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+  
+  console.log(getRandomInt(3));
+  // Expected output: 0, 1 or 2
+  
+  console.log(getRandomInt(1));
+  // Expected output: 0
+  
+  console.log(Math.random());
+  // Expected output: a number from 0 to <1
+
+// =========== Funciton : randomFruit ===================
+const randomFruit = (fruits) => {
+    let lengthArray = fruits.length; 
+    let pos = Math.floor (Math.random() * lengthArray); 
+    return fruits[pos]; 
+}
+
+console.log(randomFruit(fruits));
+console.log(randomFruit(fruits));
+console.log(randomFruit(fruits));
+console.log(randomFruit(fruits));
+
+
+
+
+
+
+//--------------------------------------------------------------//
+//
+//
+//
+//--------------------------------------------------------------//
+
+//--------------------------------------------------------------//
+//
+//
+//
+//--------------------------------------------------------------//
