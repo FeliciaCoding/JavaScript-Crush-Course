@@ -61,19 +61,33 @@ console.log(randomFruit(fruits));
 console.log(randomFruit(fruits));
 console.log(randomFruit(fruits));
 
+// =========== Funciton : weatherScorer ===================
 
+const weatherScorer = (weather) => {
 
+  if (weather == "rainy") {
+    return 1;
+  } else if (weather == "sunny"){
+    return -1;
+  } else {
+    return 0;
+  }
 
+}
 
+console.log(weatherScorer("sunny"));
 
-//--------------------------------------------------------------//
-//
-//
-//
-//--------------------------------------------------------------//
+const weatherScorer2 = (weather1, weather2) => {
+  if (weather1 == "sunny" && weather2 == "sunny"){
+    return 2;
+  } else if (weather1 == "sunny" || weather2 == "sunny") {
+    return 1;
+  } else {
+    return 0;
+  }
+}
 
-//--------------------------------------------------------------//
-//
-//
-//
-//--------------------------------------------------------------//
+console.log(weatherScorer2("rainy", "overcast"));
+console.log(weatherScorer2("sunny", "overcast"));
+console.log(weatherScorer2("overcast", "sunny"));
+console.log(weatherScorer2("sunny", "sunny"));
