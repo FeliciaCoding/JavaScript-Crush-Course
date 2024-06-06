@@ -91,7 +91,6 @@ function showResult(score, currentTotalScore, playerChoice, computerChoice) {
 
 }
 
-
 //** once click, DOM get result and display the result */
 const onClickRPS = (playerChoice, currentTotalScore) =>{
 
@@ -132,4 +131,36 @@ function playGame() {
   }
 }
 
-playGame()
+playGame();
+
+
+
+// compare these 2 parts of codes below: 
+// ==========================================================
+
+// PART 1
+// function updateResult(score, currentTotalScore) {
+//   currentTotalScore += score;
+// }
+
+// let currentTotalScore = 0;
+// updateResult(1, currentTotalScore);
+// console.log(currentTotalScore);  // Outputs: 0, not 1
+
+// PART 2
+// function updateResult(score, currentTotalScore) {
+//   currentTotalScore.value += score;
+// }
+
+// const currentTotalScore = { value: 0 };
+// updateResult(1, currentTotalScore);
+// console.log(currentTotalScore.value);  // Outputs: 1
+
+
+
+
+
+
+
+
+
