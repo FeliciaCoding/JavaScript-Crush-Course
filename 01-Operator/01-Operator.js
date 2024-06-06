@@ -41,7 +41,7 @@ console.log("Total Amount : ", total);
 
 
 
-// ----------------- Baby Level Weather App (conditionals)------------------ //
+// --------------- Baby Level Weather App (conditionals)------------------ //
 let weather = prompt("How is the weather [rainy / sunny]? "); 
 if (weather == "rainy"){
     console.log("Grab your umbrella")
