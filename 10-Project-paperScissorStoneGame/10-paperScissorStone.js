@@ -1,5 +1,5 @@
 
-const choices = document.querySelectorAll(".rpsButton"); 
+const choicesQuery = document.querySelectorAll(".rpsButton"); 
 
 const handsDiv = document.getElementById("hands");
 const resultDiv = document.getElementById("result");
@@ -9,11 +9,11 @@ const endGameButtonDiv = document.getElementById("endGameButton");
 const getComputerChoice = () => {
 // !!!!! Need an Array to access elements by pos. not a node list
 
-    const choiceArray = ["Rock", "Paper", "Scissors"]
+    const choicesArray = ["Rock", "Paper", "Scissors"]
 
-    const choicesLength = choiceArray.length; 
+    const choicesLength = choicesArray.length; 
     const pos = Math.floor(Math.random() * choicesLength); 
-    const computerChoice = choiceArray[pos];
+    const computerChoice = choicesArray[pos];
 
     const messageConsole = "Random Computer Choice : "; 
     console.log(`${messageConsole}${computerChoice}`);
@@ -23,15 +23,15 @@ const getComputerChoice = () => {
 }
 
 
-let choicesNum = {"Rock" : 3, "Scissors" : 2, "Paper" : 1};
+let choicesQueryWithValue = {"Rock" : 3, "Scissors" : 2, "Paper" : 1};
 
 // ** getResult compares playerChoice & computerChoice and returns the score accordingly **
 // human wins - getResult('Rock', 'Scissors') 👉 1
 // human loses - getResult('Scissors', 'Rock') 👉 -1
 // human draws - getResult('Rock', 'Rock') 👉 0
 function getResult(playerChoice, computerChoice) {
-    const playerChoiceValue = choicesNum[playerChoice]; 
-    const computerChoiceValue = choicesNum[computerChoice]; 
+    const playerChoiceValue = choicesQueryWithValue[playerChoice]; 
+    const computerChoiceValue = choicesQueryWithValue[computerChoice]; 
 
     let score; 
 
@@ -95,9 +95,9 @@ function showResult(score, playerChoice, computerChoice) {
   }
 
   
-  handsDiv.innerText = `${playerChoice} v.s. ${computerChoice}`;
+  handsDiv.innerText = `🙋🏻‍♀️${playerChoice} v.s. 🤖${computerChoice}`;
 
-  playerScoreDiv.innerText = score;
+  playerScoreDiv.innerText = `Your score : ${score}`;
 
 }
 
@@ -120,7 +120,7 @@ function endGame() {
 
 function playGame() {
 
-  choices.forEach(choice => {
+  choicesQuery.forEach(choice => {
     choice.onclick = () => {
 
         // !!!!! activate playerChoice once clicked
