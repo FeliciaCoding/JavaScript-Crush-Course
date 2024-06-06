@@ -24,19 +24,16 @@ const getComputerChoice = () => {
 
 
 let choicesNum = {"Rock" : 3, "Scissors" : 2, "Paper" : 1};
+
 // ** getResult compares playerChoice & computerChoice and returns the score accordingly **
 // human wins - getResult('Rock', 'Scissors') 👉 1
 // human loses - getResult('Scissors', 'Rock') 👉 -1
 // human draws - getResult('Rock', 'Rock') 👉 0
-
 function getResult(playerChoice, computerChoice) {
     const playerChoiceValue = choicesNum[playerChoice]; 
     const computerChoiceValue = choicesNum[computerChoice]; 
 
     let score; 
-
-    //const choice = choices.value;
-
 
     /*
     if (playerChoiceValue == computerChoiceValue){
