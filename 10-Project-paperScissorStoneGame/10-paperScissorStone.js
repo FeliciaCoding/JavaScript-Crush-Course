@@ -47,7 +47,7 @@ function getResult(playerChoice, computerChoice) {
   const playerChoiceValue = choicesNum[playerChoice]; 
   const computerChoiceValue = choicesNum[computerChoice]; 
 
-
+/*
   if (playerChoiceValue == computerChoiceValue){
     score = 0; 
   } else if (playerChoiceValue == 1 && computerChoiceValue == 3){
@@ -58,6 +58,18 @@ function getResult(playerChoice, computerChoice) {
     score = 1; 
   } else if (playerChoiceValue < computerChoiceValue){
     score = -1; 
+  }
+*/
+
+  // odular arithmetic to determine the result
+  const result = (playerChoiceValue - computerChoiceValue + 3) % 3;
+
+  if (result === 0) {
+      score = 0; 
+  } else if (result === 1) {
+      score = 1; 
+  } else {
+      score = -1; 
   }
 
   return score; 
