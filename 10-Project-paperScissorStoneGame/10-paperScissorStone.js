@@ -15,9 +15,6 @@ const getComputerChoice = () => {
     const pos = Math.floor(Math.random() * choicesLength); 
     const computerChoice = choicesArray[pos];
 
-    const messageConsole = "Random Computer Choice : "; 
-    console.log(`${messageConsole}${computerChoice}`);
-
     // !!!!! Dont forget : 
     return computerChoice;
 }
@@ -61,7 +58,7 @@ function getResult(playerChoice, computerChoice) {
 
 function updateResult(score, currentTotalScore) {
   // JavaScript passes primitives by value. This means that changes to currentTotalScore inside the function do not affect the original value.
-  currentTotalScore.value += score;
+  return currentTotalScore.value += score;
 }
 
 function updateShowResult(currentTotalScore) {
@@ -88,7 +85,6 @@ function showResult(score, currentTotalScore, playerChoice, computerChoice) {
   }
 
   // currentTotalScore = updateResult(score, currentTotalScore)
-  // console.log(currentTotalScore);
 
   handsDiv.innerText = `🙋🏻‍♀️${playerChoice} v.s. 🤖${computerChoice}`;
   updateShowResult(currentTotalScore);
@@ -125,8 +121,6 @@ function playGame() {
         // const playerChoice = choice;  
         const playerChoice = choice.value; 
         onClickRPS(playerChoice, currentTotalScore);
-        console.log(`Current total score: ${currentTotalScore.value}`);
-        console.log(`I clicked : ${playerChoice}` );
     }
   })
   // Add a click listener to the end game button that runs the endGame() function on click
