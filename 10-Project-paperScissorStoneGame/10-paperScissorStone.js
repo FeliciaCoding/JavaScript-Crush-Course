@@ -22,13 +22,10 @@ const getComputerChoice = () => {
     return computerChoice;
 }
 
+// const setInitialTotalScore = () => {return currentTotalScore = 0;}
 
 let choicesQueryWithValue = {"Rock" : 3, "Scissors" : 2, "Paper" : 1};
 
-// ** getResult compares playerChoice & computerChoice and returns the score accordingly **
-// human wins - getResult('Rock', 'Scissors') 👉 1
-// human loses - getResult('Scissors', 'Rock') 👉 -1
-// human draws - getResult('Rock', 'Rock') 👉 0
 function getResult(playerChoice, computerChoice) {
     const playerChoiceValue = choicesQueryWithValue[playerChoice]; 
     const computerChoiceValue = choicesQueryWithValue[computerChoice]; 
@@ -58,30 +55,26 @@ function getResult(playerChoice, computerChoice) {
         score = (playerChoiceValue > computerChoiceValue) ? 1 : -1;
     }
 
-
-
-
-/*
-  // modular arithmetic to determine the result
-  const result = (playerChoiceValue - computerChoiceValue + 3) % 3;
-
-  if (result === 0) {
-    score = 0; 
-  } else if (result === 1) {
-    score = 1; 
-  } else {
-    score = -1; 
-  }
-*/
     return score; 
   
 }
 
-// ** showResult updates the DOM to `You Win!` or `You Lose!` or `It's a Draw!` based on the score. Also shows Player Choice vs. Computer Choice**
-function showResult(score, playerChoice, computerChoice) {
+function updateResult(score, currentTotalScore) {
+  // JavaScript passes primitives by value. This means that changes to currentTotalScore inside the function do not affect the original value.
+  currentTotalScore.value += score;
+}
 
-  //computerChoice = getComputerChoice();
-  score = getResult(playerChoice,computerChoice); 
+function updateShowResult(currentTotalScore) {
+
+  playerScoreDiv.innerText = `Your score : ${currentTotalScore.value}`;
+
+}
+
+// ** showResult updates the DOM to `You Win!` or `You Lose!` or `It's a Draw!` based on the score. Also shows Player Choice vs. Computer Choice**
+function showResult(score, currentTotalScore, playerChoice, computerChoice) {
+
+  // computerChoice = getComputerChoice();
+  // score = getResult(playerChoice, computerChoice); 
 
   // !!!!! using == instead of = 
   if (score == 1){
@@ -94,21 +87,23 @@ function showResult(score, playerChoice, computerChoice) {
     resultDiv.innerText = "There is an error";
   }
 
-  
-  handsDiv.innerText = `🙋🏻‍♀️${playerChoice} v.s. 🤖${computerChoice}`;
+  // currentTotalScore = updateResult(score, currentTotalScore)
+  // console.log(currentTotalScore);
 
-  playerScoreDiv.innerText = `Your score : ${score}`;
+  handsDiv.innerText = `🙋🏻‍♀️${playerChoice} v.s. 🤖${computerChoice}`;
+  updateShowResult(currentTotalScore);
 
 }
 
+
 //** once click, DOM get result and display the result */
-const onClickRPS = (playerChoice) =>{
+const onClickRPS = (playerChoice, currentTotalScore) =>{
 
     // Using const rather than let 
     const computerChoice = getComputerChoice(); 
     const score = getResult(playerChoice, computerChoice); 
-    showResult(score, playerChoice, computerChoice); 
-    
+    updateResult(score, currentTotalScore)
+    showResult(score, currentTotalScore, playerChoice, computerChoice);
 }
 
 // ** endGame function clears all the text on the DOM **
@@ -120,19 +115,26 @@ function endGame() {
 
 function playGame() {
 
+  // let currentTotalScore = setInitialTotalScore(); 
+  const currentTotalScore = { value: 0 };
+
   choicesQuery.forEach(choice => {
     choice.onclick = () => {
 
         // !!!!! activate playerChoice once clicked
         // const playerChoice = choice;  
         const playerChoice = choice.value; 
-        onClickRPS(playerChoice);
+        onClickRPS(playerChoice, currentTotalScore);
+        console.log(`Current total score: ${currentTotalScore.value}`);
         console.log(`I clicked : ${playerChoice}` );
     }
   })
   // Add a click listener to the end game button that runs the endGame() function on click
   endGameButtonDiv.onclick = () => {
     endGame();
+
+    currentTotalScore.value = 0; 
+    updateShowResult(currentTotalScore);
   }
 }
 
