@@ -17,7 +17,14 @@ console.log(b); // Outputs: 20
 //In this example, a and b are independent variables with their own copies of the value 10. Changing b does not affect a.
 
 
+function addThausand(a) {
+    console.log(a); // Outputs: 10
+    a = a + 1000;
+    console.log(a); // Outputs: 1010
+}
 
+addThausand(a);
+console.log(a); // Outputs: 10
 
 
 
