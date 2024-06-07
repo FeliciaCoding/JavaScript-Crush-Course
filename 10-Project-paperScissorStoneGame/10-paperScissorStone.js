@@ -1,3 +1,7 @@
+// 1. connect JS  to HTML (query / DIV)
+// 2. functions 
+// 3. Main function using fucntions 
+// 4. Call main function 
 
 const choicesQuery = document.querySelectorAll(".rpsButton"); 
 
