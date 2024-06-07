@@ -1,6 +1,7 @@
 console.log("1st Run");
 
 const dogImageDiv = document.getElementById('dogImage');
+const dogButtonDiv = document.getElementById("dogButton"); 
 
 //Asynchronous Program : 
 // .then -Promises
@@ -15,6 +16,10 @@ fetch("https://dog.ceo/api/breeds/image/random")
     height=500 width=500/>`
 
 })
+
+dogButtonDiv.onclick = () => {
+    console.log("Clicked the New Dog Button"); 
+}
 
 console.log("3rd Run");
 
