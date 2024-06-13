@@ -7,19 +7,33 @@ const dogButtonDiv = document.getElementById("dogButton");
 // .then -Promises
 // stuff you have to wait for
 
-fetch("https://dog.ceo/api/breeds/image/random")
-.then(response => response.json())
-.then(json=> {
+
+function showDog() {
+
+    fetch("https://dog.ceo/api/breeds/image/random")
+    .then(response => response.json())
+    .then(json=> {
+
     console.log("2nd Run");
     console.log(json.message);
     dogImageDiv.innerHTML =`<image src='${json.message}' 
     height=500 width=500/>`
+    })
 
-})
-
-dogButtonDiv.onclick = () => {
-    console.log("Clicked the New Dog Button"); 
 }
+
+
+function startProgram () {
+
+    showDog();
+
+    dogButtonDiv.onclick = () => {
+        showDog();
+    }
+
+}
+
+startProgram ()
 
 console.log("3rd Run");
 
