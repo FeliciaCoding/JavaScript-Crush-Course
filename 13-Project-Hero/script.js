@@ -15,36 +15,35 @@ let heroImageDiv = document.getElementById("heroImage");
 //     })
 
 
-// getHero
-
-    // how to connect the buttom with the function => using onlick()
-function getHero(id, Name) {
+function getHero(id) {
 
     fetch (`${BASE_URL}/${id}`)
         .then(response => response.json())
-        .then(json => { 
-            console(json.image.url); 
+        .then(json => {  
+            console.log(json)
+
             // show image on DOM 
             // document.getElementById("body").innerHTML += `<img src = "${json.image.url}" >`; 
-            heroImageDiv.innerHTML += `<img src = "${json.image.url}" > height 200 width 200`;
+            heroImageDiv.innerHTML += `<img src = "${json.image.url}" height="100" width="100" >`;
         })
+        
+        .catch(error => console.error('Error fetching the hero:', error));
+};
 
-}
 
 
-// getRandomHeroId 
 
 const getRandomHeroId = () => {
 
-    const totalNumHero = 231; 
+    const totalNumHero = 731; 
     return Math.floor(Math.random()*totalNumHero +1); 
 
 }
 
-// Connect Buttom to functions 
 
 
 newHeroButton.onclick = () => {
+    console.log("Clicked it"); 
 
     getHero(getRandomHeroId()); 
 
