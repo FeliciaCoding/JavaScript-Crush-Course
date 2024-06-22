@@ -35,15 +35,6 @@ function getHero(id) {
         .catch(error => console.error('Error fetching the hero:', error));
 };
 
-
-const getRandomHeroId = () => {
-
-    const TOTAL_NUM_HERO = 731; 
-    return Math.floor(Math.random()*TOTAL_NUM_HERO +1); 
-
-}
-
-
 function getHeroByName(name) {
 
     fetch (`${BASE_URL}/search/${name}`)
@@ -54,7 +45,15 @@ function getHeroByName(name) {
             console.log(LINK_FROM_NAME);
             HERO_IMAGE_DIV.innerHTML = `<img src = "${LINK_FROM_NAME}" height="300" width="300" >`;
         })
-}
+};
+
+
+const getRandomHeroId = () => {
+
+    const TOTAL_NUM_HERO = 731; 
+    return Math.floor(Math.random()*TOTAL_NUM_HERO +1); 
+
+};
 
 
 RANDOM_HERO_BUTTON.onclick = () => {
